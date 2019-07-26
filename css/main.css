@@ -10,9 +10,16 @@ body {
   color: #023059;
 }
 
-.header {
+.top {
+  background: url("../assets/header-background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-filter: drop-shadow(0px 3px 3px #023059);
+          filter: drop-shadow(0px 3px 3px #023059);
+}
+
+.top .header {
   width: 100vw;
-  height: 90vh;
+  height: 95vh;
   padding: 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,34 +30,29 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #ffefba;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffefba));
-  background: linear-gradient(to right, #ffffff, #ffefba);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
-.header .headings {
+.top .header .headings {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
 }
 
-.header .headings .main-heading {
+.top .header .headings .main-heading {
   font-size: 64px;
 }
 
-.header .headings .sub-heading {
+.top .header .headings .sub-heading {
   font-size: 30px;
 }
 
-.header .headings .sub-heading a {
+.top .header .headings .sub-heading a {
   text-decoration: none;
   color: #f56469;
 }
 
-.header .headings .bio {
+.top .header .headings .bio {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   color: #035e72;
@@ -58,7 +60,7 @@ body {
   margin-top: 5vh;
 }
 
-.header .cover {
+.top .header .cover {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -66,34 +68,36 @@ body {
   height: 60vh;
 }
 
-.header .cover .avatar-image {
+.top .header .cover .avatar-image {
   border-radius: 100%;
   height: 80%;
+  -webkit-filter: drop-shadow(0px 5px 3px #023059);
+          filter: drop-shadow(0px 5px 3px #023059);
 }
 
 @media screen and (max-width: 1024px) {
-  .header {
+  .top .header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
-  .header .headings {
+  .top .header .headings {
     text-align: left;
   }
-  .header .headings .main-heading {
+  .top .header .headings .main-heading {
     font-size: 40px;
   }
-  .header .headings .sub-heading {
+  .top .header .headings .sub-heading {
     font-size: 22px;
   }
-  .header .headings .bio {
+  .top .header .headings .bio {
     font-size: 15px;
   }
-  .header .cover {
+  .top .header .cover {
     padding-top: 10vh;
   }
-  .header .cover .avatar-image {
+  .top .header .cover .avatar-image {
     height: 80%;
   }
 }
