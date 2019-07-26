@@ -1,0 +1,29 @@
+@import 'variables';
+
+.site-menu {
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: space-evenly;
+
+  .menu-item {
+    padding: 2vw 3vw;
+
+    .menu-item-link {
+      text-decoration: none;
+      color: $color_semibright;
+      font-size: 20px;
+      padding: 10px 50px;
+
+      &:hover {
+        background-color: $color_bright;
+        color: $color_dark;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .site-menu {
+    display: none;
+  }
+}
