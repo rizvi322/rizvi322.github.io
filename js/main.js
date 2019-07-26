@@ -1,7 +1,19 @@
 const API_ENDPOINT_GITHUB = 'https://api.github.com/users/rizvi322';
 
 const containerDiv = document.querySelector('#container');
-const localCache = {};
+
+const initLSCache = () => {
+  const expirationKey = 'lastExpirationDate';
+  const expirationDate = lscache.get(expirationKey);
+  const currentDate = new Date();
+
+  if (!expirationDate) {
+    lscache.set(expirationKey, currentDate);
+  } else if (new Date(expirationDate).getDate() !== currentDate.getDate()) {
+    lscache.flush();
+    lscache.set(expirationKey, currentDate);
+  }
+};
 
 const renderTemplate = (template, context = {}) => {
   twig({
@@ -15,12 +27,17 @@ const renderTemplate = (template, context = {}) => {
 };
 
 const fetchMyGithubProfileData = async () => {
-  if (localCache['githubData']) {
-    return localCache['githubData'];
+  const cacheKey = 'githubData';
+  let githubData = lscache.get(cacheKey);
+
+  if (githubData) {
+    return githubData;
   }
 
-  const githubData = await fetch(API_ENDPOINT_GITHUB).then(async result => await result.json());
-  localCache['githubData'] = githubData;
+  githubData = await fetch(API_ENDPOINT_GITHUB).then(
+    async result => await result.json()
+  );
+  lscache.set(cacheKey, githubData);
   return githubData;
 };
 
@@ -36,8 +53,9 @@ const loadIndexTemplate = () => {
       },
       avatarUrl: githubData.avatar_url,
       aboutMe: githubData.bio
-     });
+    });
   });
 };
 
+initLSCache();
 loadIndexTemplate();

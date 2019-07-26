@@ -1,75 +1,14 @@
-$color_dark: #023059;
-$color_semidark: #035e72;
-$color_medium: #36a59a;
-$color_semibright: #f56469;
-$color_bright: #f5a187;
-
-$font_serif: 'Alegreya', serif;
-$font_sans: 'Roboto', sans-serif;
+@import 'fragments/variables';
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
 
+body {
   font-family: $font_serif;
   color: $color_dark;
 }
 
-.header {
-  width: 100vw;
-  height: 90vh;
-  padding: 50px;
-
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
-
-  @media (min-width: 768px) {
-    display: flex;
-  }
-
-  @media (max-width: 767px) {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  background: #ffefba; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffffff,
-    #ffefba
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #ffefba
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  .headings {
-    .main-heading {
-      font-size: 64px;
-    }
-
-    .sub-heading {
-      font-size: 30px;
-
-      a {
-        text-decoration: none;
-        color: $color_semibright;
-      }
-    }
-
-    .bio {
-      margin-top: 20px;
-      width: 70%;
-      font-family: $font_sans;
-      font-size: 20px;
-      color: $color_semidark;
-    }
-  }
-
-  .avatar-image {
-    border-radius: 100%;
-    max-width: 50vh;
-  }
-}
+@import 'fragments/header';
