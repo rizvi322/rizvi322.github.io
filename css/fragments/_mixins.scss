@@ -9,10 +9,21 @@
 
     .main-heading {
       line-height: $height;
+      color: white;
+    }
+  }
 
+  @media screen and (min-width: 1025px) {
+    .main-heading {
       font-size: 80px;
       letter-spacing: 5px;
-      color: white;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .main-heading {
+      font-size: 60px;
+      margin-bottom: 20px;
     }
   }
 }

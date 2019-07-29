@@ -494,7 +494,6 @@ body {
   background: url("../../assets/education-background.jpg") no-repeat center center fixed;
   height: 40vh;
   text-align: center;
-  opacity: 0;
 }
 
 .main .education .heading .mask {
@@ -504,9 +503,21 @@ body {
 
 .main .education .heading .mask .main-heading {
   line-height: 40vh;
-  font-size: 80px;
-  letter-spacing: 5px;
   color: white;
+}
+
+@media screen and (min-width: 1025px) {
+  .main .education .heading .main-heading {
+    font-size: 80px;
+    letter-spacing: 5px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main .education .heading .main-heading {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
 }
 
 .main .education .cards {
@@ -547,6 +558,7 @@ body {
 
 @media screen and (min-width: 1025px) {
   .main .education .heading {
+    opacity: 0;
     -webkit-animation: ease-from-top 1s ease-out 4s forwards;
             animation: ease-from-top 1s ease-out 4s forwards;
   }
@@ -581,15 +593,9 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-  .main {
-    margin: 20px 0px;
-  }
   .main .education {
     text-align: center;
-  }
-  .main .education .main-heading {
-    font-size: 40px;
-    margin-bottom: 20px;
+    height: auto;
   }
   .main .education .cards {
     -webkit-box-orient: vertical;

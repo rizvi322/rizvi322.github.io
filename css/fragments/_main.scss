@@ -20,7 +20,6 @@
         $main_area_section_heading_height,
         url('../../assets/education-background.jpg')
       );
-      opacity: 0;
     }
 
     .cards {
@@ -55,6 +54,7 @@
   .main {
     .education {
       .heading {
+        opacity: 0;
         animation: ease-from-top 1s ease-out 4s forwards;
 
         .main-heading {
@@ -94,15 +94,9 @@
 
 @media screen and (max-width: 1024px) {
   .main {
-    margin: 20px 0px;
-
     .education {
       text-align: center;
-
-      .main-heading {
-        font-size: 40px;
-        margin-bottom: 20px;
-      }
+      height: auto;
 
       .cards {
         flex-direction: column-reverse;
