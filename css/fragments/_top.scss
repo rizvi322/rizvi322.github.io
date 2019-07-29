@@ -71,6 +71,8 @@
 
 @media screen and (max-width: 1024px) {
   .top {
+    background: url('../assets/header-background-mobile.jpg') no-repeat center
+      center fixed;
     .header {
       height: 100vh;
       flex-direction: column-reverse;

@@ -332,6 +332,9 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+  .top {
+    background: url("../assets/header-background-mobile.jpg") no-repeat center center fixed;
+  }
   .top .header {
     height: 100vh;
     -webkit-box-orient: vertical;
