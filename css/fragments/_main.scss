@@ -1,23 +1,33 @@
 @import 'variables';
 @import 'animations';
+@import 'mixins';
 
 .main {
   width: 100%;
-  margin: 50px 0px;
+  // margin: 50px 0px;
   overflow: hidden;
 
   .education {
-    width: 90vw;
-    margin: auto;
+    width: 100%;
+    height: 70vh;
 
-    .main-heading {
-      font-size: 50px;
-      margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .heading {
+      @include heading(
+        $main_area_section_heading_height,
+        url('../../assets/education-background.jpg')
+      );
+      opacity: 0;
     }
 
     .cards {
+      width: 90vw;
+      margin: auto;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
 
       .card {
         // border-radius: 50%;
@@ -44,9 +54,13 @@
 @media screen and (min-width: 1025px) {
   .main {
     .education {
-      .main-heading {
-        opacity: 0;
-        animation: ease-from-top 1s ease-out 3s forwards;
+      .heading {
+        animation: ease-from-top 1s ease-out 4s forwards;
+
+        .main-heading {
+          opacity: 0;
+          animation: fade-in 1s ease-out 4.5s forwards;
+        }
       }
 
       .cards {
@@ -54,22 +68,22 @@
           opacity: 0;
 
           &.card1 {
-            animation: ease-from-left 1s ease-out 4s forwards;
+            animation: ease-from-left 1s ease-out 5s forwards;
             z-index: -1;
           }
 
           &.card2 {
-            animation: ease-from-left 1s ease-out 5s forwards;
+            animation: ease-from-left 1s ease-out 6s forwards;
             z-index: -2;
           }
 
           &.card3 {
-            animation: ease-from-left 1s ease-out 6s forwards;
+            animation: ease-from-left 1s ease-out 7s forwards;
             z-index: -3;
           }
 
           &.card4 {
-            animation: ease-from-left 1s ease-out 7s forwards;
+            animation: ease-from-left 1s ease-out 8s forwards;
             z-index: -4;
           }
         }

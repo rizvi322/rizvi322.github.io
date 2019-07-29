@@ -1,0 +1,18 @@
+@mixin heading($height, $background_image_url) {
+  background: $background_image_url no-repeat center center fixed;
+  height: $height;
+  text-align: center;
+
+  .mask {
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.7);
+
+    .main-heading {
+      line-height: $height;
+
+      font-size: 80px;
+      letter-spacing: 5px;
+      color: white;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 <div class="top">
   {% include "fragments/site-menu.twig" %}
-  <section class="header">
+  <section id="home" class="header">
     <div class="headings">
       <h1 class="main-heading">{{ name }}</h1>
       <h2 class="sub-heading">
@@ -16,8 +16,12 @@
 </div>
 
 <div class="main">
-  <div class="education">
-    <h1 class="main-heading">Education</h1>
+  <section id="education" class="education">
+    <div class="heading">
+      <div class="mask">
+        <h1 class="main-heading">Education</h1>
+      </div>
+    </div>
     <div class="cards">
       {% for degree in education|reverse %}
         <div class="card card{{ loop.index }}">
@@ -30,5 +34,14 @@
         </div>
       {% endfor %}
     </div>
-  </div>
+  </section>
+</div>
+
+<div class="footer">
+  <p>@Copyright
+    <strong>S M Raihan Azim</strong>
+  </p>
+  <p>Email:
+    <a href="@mailto:raihan.cseju@gmail.com">raihan.cseju@gmail.com</a>
+  </p>
 </div>
