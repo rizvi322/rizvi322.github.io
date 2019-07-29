@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'animations';
 
 .site-menu {
   background-color: rgba(255, 255, 255, 0.7);
@@ -10,15 +11,21 @@
 
     .menu-item-link {
       text-decoration: none;
-      color: $color_semibright;
+      color: $color_semidark;
       font-size: 20px;
       padding: 10px 50px;
 
       &:hover {
-        background-color: $color_bright;
-        color: $color_dark;
+        border: solid 1px $color_dark;
       }
     }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .menu-item {
+    opacity: 0;
+    animation: ease-from-top 1s ease-in 3s forwards;
   }
 }
 

@@ -1,0 +1,105 @@
+@import 'variables';
+@import 'animations';
+
+.main {
+  width: 100%;
+  margin: 50px 0px;
+  overflow: hidden;
+
+  .education {
+    width: 90vw;
+    margin: auto;
+
+    .main-heading {
+      font-size: 50px;
+      margin-bottom: 50px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-between;
+
+      .card {
+        // border-radius: 50%;
+        width: 20vw;
+        height: 25vh;
+        padding: 20px;
+        background-color: $color_medium;
+        color: white;
+        filter: drop-shadow(0px 5px 3px $color_dark);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .main {
+    .education {
+      .main-heading {
+        opacity: 0;
+        animation: ease-from-top 1s ease-out 3s forwards;
+      }
+
+      .cards {
+        .card {
+          opacity: 0;
+
+          &.card1 {
+            animation: ease-from-left 1s ease-out 4s forwards;
+            z-index: -1;
+          }
+
+          &.card2 {
+            animation: ease-from-left 1s ease-out 5s forwards;
+            z-index: -2;
+          }
+
+          &.card3 {
+            animation: ease-from-left 1s ease-out 6s forwards;
+            z-index: -3;
+          }
+
+          &.card4 {
+            animation: ease-from-left 1s ease-out 7s forwards;
+            z-index: -4;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    margin: 20px 0px;
+
+    .education {
+      text-align: center;
+
+      .main-heading {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+
+      .cards {
+        flex-direction: column-reverse;
+        align-items: center;
+
+        .card {
+          width: 90vw;
+          height: 25vh;
+          margin: 20px 0px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "education": [
+    {
+      "name": "M.Sc",
+      "subject": "Computer Science and Engineering (CSE)",
+      "institute": "Jahangirnagar Universiry"
+    },
+    {
+      "name": "B.Sc",
+      "subject": "Computer Science and Engineering (CSE)",
+      "institute": "Jahangirnagar Universiry"
+    },
+    {
+      "name": "H.S.C",
+      "institute": "Saint Joseph College"
+    },
+    {
+      "name": "S.S.C",
+      "institute": "Dhaka Residential Model College"
+    }
+  ]
+}

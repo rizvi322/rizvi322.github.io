@@ -1,10 +1,13 @@
 @import 'variables';
+@import 'animations';
+@import 'site-menu';
 
 .top {
   background: url('../assets/header-background.jpg') no-repeat center center
     fixed;
   background-size: cover;
   filter: drop-shadow(0px 3px 3px $color_dark);
+  overflow: hidden;
 
   .header {
     width: 100vw;
@@ -55,24 +58,36 @@
   }
 }
 
+@media screen and (min-width: 1025px) {
+  .headings {
+    animation: ease-from-left 2s;
+  }
+
+  .avatar-image {
+    opacity: 0;
+    animation: ease-from-right 1s ease-out 2s forwards;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .top {
     .header {
+      height: 100vh;
       flex-direction: column-reverse;
 
       .headings {
         text-align: left;
 
         .main-heading {
-          font-size: 40px;
+          font-size: 45px;
         }
 
         .sub-heading {
-          font-size: 22px;
+          font-size: 25px;
         }
 
         .bio {
-          font-size: 15px;
+          font-size: 18px;
         }
       }
 

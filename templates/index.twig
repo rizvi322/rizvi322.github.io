@@ -14,3 +14,21 @@
     </div>
   </section>
 </div>
+
+<div class="main">
+  <div class="education">
+    <h1 class="main-heading">Education</h1>
+    <div class="cards">
+      {% for degree in education|reverse %}
+        <div class="card card{{ loop.index }}">
+          <h1>{{ degree.name }}</h1>
+
+          <h2>{{ degree.institute }}</h2>
+          {% if degree.subject %}
+            <p>{{ degree.subject }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

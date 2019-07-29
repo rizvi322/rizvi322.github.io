@@ -41,8 +41,26 @@ const fetchMyGithubProfileData = async () => {
   return githubData;
 };
 
+fetchAllRequiredData = async () => {
+  const data = {};
+
+  await fetch('../assets/data.json')
+    .then(async result => await result.json())
+    .then(json => {
+      data['local'] = json;
+    });
+
+  await fetchMyGithubProfileData().then(githubData => {
+    data['github'] = githubData;
+  });
+
+  return data;
+};
+
 const loadIndexTemplate = () => {
-  fetchMyGithubProfileData().then(githubData => {
+  fetchAllRequiredData().then(data => {
+    const githubData = data.github;
+    const localData = data.local;
     const company = githubData.company.split('-');
 
     renderTemplate('index', {
@@ -52,7 +70,8 @@ const loadIndexTemplate = () => {
         url: company[1].trim()
       },
       avatarUrl: githubData.avatar_url,
-      aboutMe: githubData.bio
+      aboutMe: githubData.bio,
+      education: localData.education
     });
   });
 };
