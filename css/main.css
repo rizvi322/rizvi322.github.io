@@ -172,7 +172,7 @@ body {
 
 .top .header {
   width: 100vw;
-  height: 85vh;
+  height: 95vh;
   padding: 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -349,7 +349,13 @@ body {
 }
 
 .site-menu {
-  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: white;
+  -webkit-filter: drop-shadow(0px 5px 3px #023059);
+          filter: drop-shadow(0px 5px 3px #023059);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -359,7 +365,7 @@ body {
 }
 
 .site-menu .menu-item {
-  padding: 2vw 3vw;
+  padding: 2vh 3vw;
 }
 
 .site-menu .menu-item .menu-item-link {
@@ -374,7 +380,7 @@ body {
 }
 
 @media screen and (min-width: 1025px) {
-  .menu-item {
+  .site-menu {
     opacity: 0;
     -webkit-animation: ease-from-top 1s ease-in 3s forwards;
             animation: ease-from-top 1s ease-in 3s forwards;

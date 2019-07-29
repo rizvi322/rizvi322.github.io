@@ -2,12 +2,19 @@
 @import 'animations';
 
 .site-menu {
-  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  background-color: rgba(255, 255, 255, 1);
+  filter: drop-shadow(0px 5px 3px $color_dark);
+
   display: flex;
   justify-content: space-evenly;
 
   .menu-item {
-    padding: 2vw 3vw;
+    padding: 2vh 3vw;
 
     .menu-item-link {
       text-decoration: none;
@@ -23,7 +30,7 @@
 }
 
 @media screen and (min-width: 1025px) {
-  .menu-item {
+  .site-menu {
     opacity: 0;
     animation: ease-from-top 1s ease-in 3s forwards;
   }
