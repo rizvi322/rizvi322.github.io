@@ -4,12 +4,12 @@
 
 .main {
   width: 100%;
-  // margin: 50px 0px;
+  margin-top: 10px;
   overflow: hidden;
 
   .education {
     width: 100%;
-    height: 70vh;
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -55,11 +55,17 @@
     .education {
       .heading {
         opacity: 0;
-        animation: ease-from-top 1s ease-out 4s forwards;
 
         .main-heading {
           opacity: 0;
-          animation: fade-in 1s ease-out 4.5s forwards;
+
+          &.animate {
+            animation: fade-in 1s ease-out 0.5s forwards;
+          }
+        }
+
+        &.animate {
+          animation: ease-from-top 1s ease-out 0s forwards;
         }
       }
 
@@ -68,22 +74,30 @@
           opacity: 0;
 
           &.card1 {
-            animation: ease-from-left 1s ease-out 5s forwards;
+            &.animate {
+              animation: ease-from-left 1s ease-out 1s forwards;
+            }
             z-index: -1;
           }
 
           &.card2 {
-            animation: ease-from-left 1s ease-out 6s forwards;
+            &.animate {
+              animation: ease-from-left 1s ease-out 2s forwards;
+            }
             z-index: -2;
           }
 
           &.card3 {
-            animation: ease-from-left 1s ease-out 7s forwards;
+            &.animate {
+              animation: ease-from-left 1s ease-out 3s forwards;
+            }
             z-index: -3;
           }
 
           &.card4 {
-            animation: ease-from-left 1s ease-out 8s forwards;
+            &.animate {
+              animation: ease-from-left 1s ease-out 4s forwards;
+            }
             z-index: -4;
           }
         }

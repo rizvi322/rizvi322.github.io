@@ -1,6 +1,7 @@
 const API_ENDPOINT_GITHUB = 'https://api.github.com/users/rizvi322';
 
 const containerDiv = document.querySelector('#container');
+let uiScriptLoaded = false;
 
 const initLSCache = () => {
   const expirationKey = 'lastExpirationDate';
@@ -21,6 +22,14 @@ const renderTemplate = (template, context = {}) => {
     href: `templates/${template}.twig`,
     load: twig => {
       containerDiv.innerHTML = twig.render(context);
+
+      if(!uiScriptLoaded) {
+        uiScript = document.createElement('script');
+        uiScript.src = 'js/ui.js';
+
+        document.body.appendChild(uiScript);
+        uiScriptLoaded = true;
+      }
     },
     namespace: 'templates/'
   });

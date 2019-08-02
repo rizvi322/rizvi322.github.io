@@ -17,15 +17,15 @@
 </div>
 
 <div class="main">
-  <section id="education" class="education">
-    <div class="heading">
+  <section id="education" class="education track">
+    <div class="heading track-child">
       <div class="mask">
-        <h1 class="main-heading">Education</h1>
+        <h1 class="main-heading track-child">Education</h1>
       </div>
     </div>
     <div class="cards">
       {% for degree in education|reverse %}
-        <div class="card card{{ loop.index }}">
+        <div class="card card{{ loop.index }} track-child">
           <h1>{{ degree.name }}</h1>
 
           <h2>{{ degree.institute }}</h2>
@@ -38,7 +38,7 @@
   </section>
 </div>
 
-<div class="footer">
+<div id="contact" class="footer">
   <p>@Copyright
     <strong>S M Raihan Azim</strong>
   </p>
