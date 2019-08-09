@@ -1,0 +1,19 @@
+<section id="education" class="education track">
+    <div class="heading track-child">
+      <div class="mask">
+        <h1 class="main-heading track-child">Education</h1>
+      </div>
+    </div>
+    <div class="cards">
+      {% for degree in education|reverse %}
+        <div class="card card{{ loop.index }} track-child">
+          <h1>{{ degree.name }}</h1>
+
+          <h2>{{ degree.institute }}</h2>
+          {% if degree.subject %}
+            <p>{{ degree.subject }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>

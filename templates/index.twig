@@ -1,41 +1,17 @@
 {% include "fragments/site-menu.twig" %}
 
 <div class="top">
-  <section id="home" class="header">
-    <div class="headings">
-      <h1 class="main-heading">{{ name }}</h1>
-      <h2 class="sub-heading">
-        <a href="{{ company.url }}" target="_blank" title="{{ company.name }}">{{ company.name }}</a>
-      </h2>
-      <p class="bio">{{ aboutMe }}</p>
-    </div>
-
-    <div class="cover">
-      <img class="avatar-image" src="{{ avatarUrl }}" alt="avatar url"/>
-    </div>
-  </section>
+   {% include "fragments/home.twig" %}
 </div>
 
-<div class="main">
-  <section id="education" class="education track">
-    <div class="heading track-child">
-      <div class="mask">
-        <h1 class="main-heading track-child">Education</h1>
-      </div>
-    </div>
-    <div class="cards">
-      {% for degree in education|reverse %}
-        <div class="card card{{ loop.index }} track-child">
-          <h1>{{ degree.name }}</h1>
+<div class="section-separator"></div>
 
-          <h2>{{ degree.institute }}</h2>
-          {% if degree.subject %}
-            <p>{{ degree.subject }}</p>
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
-  </section>
+<div class="main">
+  {% include "fragments/education.twig" with { "education": education } only %}
+
+  <div class="section-separator"></div>
+
+  {% include "fragments/experience.twig" with { "experience": experience } only %}
 </div>
 
 <div id="contact" class="footer">

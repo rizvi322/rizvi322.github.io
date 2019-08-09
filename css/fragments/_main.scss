@@ -8,25 +8,40 @@
   overflow: hidden;
 
   .education {
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
     .heading {
       @include heading(
         $main_area_section_heading_height,
         url('../../assets/education-background.jpg')
       );
     }
+  }
+
+  .experience {
+    .heading {
+      @include heading(
+        $main_area_section_heading_height,
+        url('../../assets/experience-background.jpg')
+      );
+    }
+  }
+
+  // Common for all sections
+  .education,
+  .experience {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
     .cards {
       width: 90vw;
+      height: auto;
       margin: auto;
       display: flex;
       justify-content: space-evenly;
+      align-items: center;
 
       .card {
         // border-radius: 50%;
@@ -47,12 +62,71 @@
         }
       }
     }
+
+    .expDetails {
+      width: 90vw;
+      margin: 20px 0px;
+      // border: solid 3px $color_dark;
+      background: #ffffff;
+      filter: drop-shadow(0px 5px 3px $color_dark);
+      border-radius: 5px;
+      overflow: hidden;
+
+      text-align: justify;
+
+      &.hide {
+        display: none;
+      }
+
+      &.show {
+        display: block;
+      }
+
+      .header {
+        background-color: $color_medium;
+        padding: 10px 0px;
+
+        display: flex;
+        justify-content: space-around;
+
+        h1 {
+          flex: 3;
+          text-align: center;
+        }
+
+        .expDetailsCloseBtn {
+          margin-right: 20px;
+          border: none;
+          background: none;
+          color: white;
+
+          font-size: 15px;
+          font-weight: bold;
+
+          &:hover {
+            color: $color_bright;
+          }
+        }
+      }
+
+      .expSummary {
+        padding: 20px 40px;
+        p {
+          margin: 20px 0px;
+        }
+
+        ul {
+          margin: 0px 40px;
+        }
+      }
+    }
   }
 }
 
 @media screen and (min-width: 1025px) {
   .main {
-    .education {
+    .education,
+    .experience {
       .heading {
         opacity: 0;
 
@@ -70,6 +144,16 @@
       }
 
       .cards {
+        &.hide {
+          animation: ease-to-top 1s ease-out forwards;
+          display: none;
+        }
+
+        &.show {
+          display: flex;
+          animation: ease-from-top 1s ease-out forwards;
+        }
+
         .card {
           opacity: 0;
 
@@ -77,28 +161,57 @@
             &.animate {
               animation: ease-from-left 1s ease-out 1s forwards;
             }
-            z-index: -1;
+            z-index: 4;
           }
 
           &.card2 {
             &.animate {
               animation: ease-from-left 1s ease-out 2s forwards;
             }
-            z-index: -2;
+            z-index: 3;
           }
 
           &.card3 {
             &.animate {
               animation: ease-from-left 1s ease-out 3s forwards;
             }
-            z-index: -3;
+            z-index: 2;
           }
 
           &.card4 {
             &.animate {
               animation: ease-from-left 1s ease-out 4s forwards;
             }
-            z-index: -4;
+            z-index: 1;
+          }
+
+          .expDetailsBtn {
+            border: none;
+            background: none;
+            color: white;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            &:hover {
+              color: $color_bright;
+            }
+          }
+        }
+      }
+
+      .expDetails {
+        opacity: 0;
+
+        &.animate {
+          animation: ease-from-top 1s ease-out 1s forwards;
+        }
+
+        .expSummary {
+          opacity: 0;
+
+          &.animate {
+            animation: fade-in 1s ease-out 2s forwards;
           }
         }
       }
@@ -108,7 +221,8 @@
 
 @media screen and (max-width: 1024px) {
   .main {
-    .education {
+    .education,
+    .experience {
       text-align: center;
       height: auto;
 
@@ -120,7 +234,16 @@
           width: 90vw;
           height: 25vh;
           margin: 20px 0px;
+
+          .expDetailsBtn {
+            display: none;
+          }
         }
+      }
+
+      .expDetailsCloseBtn,
+      .expDetails {
+        display: none;
       }
     }
   }

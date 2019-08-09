@@ -2,6 +2,7 @@
   background: $background_image_url no-repeat center center fixed;
   height: $height;
   text-align: center;
+  z-index: 10;
 
   .mask {
     height: 100%;
