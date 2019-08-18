@@ -1,76 +1,43 @@
-// Markdown experience details
 const mdConverter = new showdown.Converter();
-const expCardsDiv = document.querySelector('.expCards');
-const expDetailsDiv = document.querySelector('.expDetails');
-const expSummaryDiv = expDetailsDiv.querySelector('.expSummary');
-const compRespDiv = expSummaryDiv.querySelector('.responsibility');
 
-const loadMarkdownFileContent = async (fileName, element) => {
+const loadMarkdownFileContent = async (fileName, container) => {
   const markdownText = await fetch('../assets/markdowns/' + fileName).then(
     async result => await result.text()
   );
 
   if(markdownText) {
-    element.innerHTML =  mdConverter.makeHtml(markdownText);
+    container.innerHTML =  mdConverter.makeHtml(markdownText);
   }
 };
 
-const toggleAllExpCardsVisibility = () => {
-  if(expCardsDiv.classList.contains('hide')) {
-    expCardsDiv.classList.remove('hide');
-    expCardsDiv.classList.add('show');
-  } else {
-    expCardsDiv.classList.remove('show');
-    expCardsDiv.classList.add('hide');
+const companies = document.querySelectorAll('.company');
+
+companies.forEach(company => {
+  const data = JSON.parse(company.dataset['company']);
+  const responsibilityContainer = company.querySelector('.responsibility');
+
+  if(data.expFile) {
+    loadMarkdownFileContent(data.expFile, responsibilityContainer);
   }
-};
-
-const loadExpDetails = (companyExpString) => {
-  const companyExp = JSON.parse(companyExpString);
-
-  expDetailsDiv.querySelector('.company').innerHTML = companyExp.name;
-  expSummaryDiv.querySelector('.designation').innerHTML = companyExp.designation;
-  expSummaryDiv.querySelector('.since').innerHTML = companyExp.since;
-
-  if(companyExp.expFile) {
-    loadMarkdownFileContent(companyExp.expFile, compRespDiv);
+  else if(data.responsibility) {
+    responsibilityContainer.innerHTML += data.responsibility;
   }
-  else {
-    compRespDiv.innerHTML = companyExp.responsibility;
-  }
-
-  toggleAllExpCardsVisibility();
-
-  expDetailsDiv.classList.remove('hide');
-  expDetailsDiv.classList.add('show', 'animate');
-
-  expSummaryDiv.classList.remove('hide');
-  expSummaryDiv.classList.add('animate');
-};
-
-const hideExpDetails = () => {
-  expDetailsDiv.classList.remove('show', 'animate');
-  expDetailsDiv.classList.add('hide');
-
-  expSummaryDiv.classList.remove('animate');
-  expSummaryDiv.classList.add('hide');
-
-  toggleAllExpCardsVisibility();
-};
-
-document.querySelectorAll('.expDetailsBtn').forEach(button => {
-  button.addEventListener('click', event => {
-    loadExpDetails(event.target.dataset['company']);
-  });
 });
-
-document.querySelectorAll('.expDetailsCloseBtn').forEach(button => {
-  button.addEventListener('click', event => {
-    hideExpDetails();
-  });
-});
-
 // Ends Markdown experience details
+
+
+// Scroll Magic codes
+const controller = new ScrollMagic.Controller();
+
+new ScrollMagic.Scene({
+  duration: `${(companies.length - 1) * 100}%`,
+  triggerElement: '.experience-heading',
+  triggerHook: 0
+})
+.setPin('.experience-heading')
+.addTo(controller);
+
+// Ends Scroll Magic codes
 
 // Intersection objservver codes
 

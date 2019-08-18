@@ -1,30 +1,17 @@
-<section id="experience" class="experience track">
-  <div class="heading track-child">
+<section class="experience track" id="experience">
+  <div class="heading experience-heading track-child">
     <div class="mask">
       <h1 class="main-heading track-child">Experience</h1>
     </div>
   </div>
-  <div class="companyDetails">
-    <div class="cards expCards">
-      {% for company in experience %}
-        <div class="card card{{ loop.index }} track-child">
-          <h1>{{ company.name }}</h1>
-          <p>{{ company.designation }}</p>
-          <p>{{ company.since }}</p>
-          <button class="expDetailsBtn" data-company='{{ company | json_encode }}'>Show details</button>
-        </div>
-      {% endfor %}
-    </div>
-    <div class="expDetails">
-      <div class="header">
-        <h1 class="company"></h1>
-        <button class="expDetailsCloseBtn">Close</button>
-      </div>
-      <div class="expSummary">
-        <h2 class="designation"></h2>
-        <h3 class="since"></h3>
+  <div class="companies">
+    {% for company in experience %}
+      <div class="company" data-company='{{ company | json_encode }}'>
+        <h1>{{ company.name }}</h1>
+        <p>{{ company.designation }}</p>
+        <p>{{ company.since }}</p>
         <div class="responsibility"></div>
       </div>
-    </div>
+    {% endfor %}
   </div>
 </section>

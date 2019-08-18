@@ -4,14 +4,9 @@
    {% include "fragments/home.twig" %}
 </div>
 
-<div class="section-separator"></div>
-
 <div class="main">
-  {% include "fragments/education.twig" with { "education": education } only %}
-
-  <div class="section-separator"></div>
-
   {% include "fragments/experience.twig" with { "experience": experience } only %}
+  {% include "fragments/education.twig" with { "education": education } only %}
 </div>
 
 <div id="contact" class="footer">
