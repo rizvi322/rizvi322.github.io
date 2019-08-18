@@ -80,10 +80,13 @@ const loadIndexTemplate = () => {
       },
       avatarUrl: githubData.avatar_url,
       aboutMe: githubData.bio,
-      education: localData.education
+      education: localData.education,
+      experience: localData.experience
     });
   });
 };
 
 initLSCache();
 loadIndexTemplate();
+
+

@@ -58,15 +58,15 @@
 }
 
 @media screen and (min-width: 1025px) {
-  .headings {
-    animation: ease-from-left 2s ease-out;
-  }
+    .headings {
+      animation: ease-from-left 2s ease-out;
+    }
 
-  .avatar-image {
-    opacity: 0;
-    animation: ease-from-right 1s ease-out 2s forwards;
+    .avatar-image {
+      opacity: 0;
+      animation: ease-from-right 1s ease-out 2s forwards;
+    }
   }
-}
 
 @media screen and (max-width: 1024px) {
   .top {

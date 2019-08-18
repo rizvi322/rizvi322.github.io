@@ -9,6 +9,14 @@
 body {
   font-family: $font_serif;
   color: $color_dark;
+
+  @media screen and (min-width: 1025px) {
+    .section-separator {
+      margin-top: 10px;
+      // background-color: lightgray;
+      height: 20vh;
+    }
+  }
 }
 
 @import 'fragments/top';

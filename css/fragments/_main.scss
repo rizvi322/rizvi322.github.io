@@ -4,123 +4,123 @@
 
 .main {
   width: 100%;
-  margin-top: 10px;
   overflow: hidden;
 
-  .education {
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .experience {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     .heading {
-      @include heading(
-        $main_area_section_heading_height,
-        url('../../assets/education-background.jpg')
-      );
+      @include heading(100vh, url('../../assets/experience-background.jpg'));
+      margin: 0 !important;
     }
 
-    .cards {
-      width: 90vw;
-      margin: auto;
-      display: flex;
-      justify-content: space-evenly;
-
-      .card {
-        // border-radius: 50%;
-        width: 20vw;
-        height: 25vh;
+    .companies {
+      .company {
+        height: 100vh;
         padding: 20px;
-        background-color: $color_medium;
-        color: white;
-        filter: drop-shadow(0px 5px 3px $color_dark);
+        overflow-y: auto;
 
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        color: white;
+
+        .responsibility {
+          margin-top: 50px;
+          p {
+            margin: 10px 0px;
+          }
+
+          ul {
+            margin: 0px 20px;
+          }
+
+          a {
+            color: inherit;
+            font-weight: bolder;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .company:nth-child(odd) {
+        background: radial-gradient(
+          lighten($color_dark, 10%),
+          darken($color_dark, 10%)
+        );
+      }
+
+      .company:nth-child(even) {
+        background: radial-gradient(
+          lighten($color_semibright, 10%),
+          darken($color_semibright, 10%)
+        );
+      }
+    }
+  }
+
+  .education {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .heading {
+      @include heading(100vh, url('../../assets/education-background.jpg'));
+    }
+
+    .degrees {
+      height: 100vh;
+      padding: 20px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      background: radial-gradient(
+        lighten($color_semidark, 10%),
+        darken($color_semidark, 10%)
+      );
+      color: white;
+
+      .degree {
+        width: 100%;
         text-align: center;
 
-        p {
-          font-size: 1.2rem;
+        h1 {
+          font-size: 25px;
         }
+
+        h2 {
+          font-size: 20px;
+          padding: 20px 0px;
+        }
+      }
+
+      .line {
+        width: 70%;
+        height: 1px;
+        background: white;
       }
     }
   }
 }
 
 @media screen and (min-width: 1025px) {
-  .main {
-    .education {
-      .heading {
-        opacity: 0;
-
-        .main-heading {
-          opacity: 0;
-
-          &.animate {
-            animation: fade-in 1s ease-out 0.5s forwards;
-          }
-        }
-
-        &.animate {
-          animation: ease-from-top 1s ease-out 0s forwards;
-        }
-      }
-
-      .cards {
-        .card {
-          opacity: 0;
-
-          &.card1 {
-            &.animate {
-              animation: ease-from-left 1s ease-out 1s forwards;
-            }
-            z-index: -1;
-          }
-
-          &.card2 {
-            &.animate {
-              animation: ease-from-left 1s ease-out 2s forwards;
-            }
-            z-index: -2;
-          }
-
-          &.card3 {
-            &.animate {
-              animation: ease-from-left 1s ease-out 3s forwards;
-            }
-            z-index: -3;
-          }
-
-          &.card4 {
-            &.animate {
-              animation: ease-from-left 1s ease-out 4s forwards;
-            }
-            z-index: -4;
-          }
-        }
-      }
-    }
-  }
 }
 
 @media screen and (max-width: 1024px) {
   .main {
+    .education,
+    .experience {
+      grid-template-columns: 1fr;
+    }
+
     .education {
-      text-align: center;
-      height: auto;
-
-      .cards {
-        flex-direction: column-reverse;
-        align-items: center;
-
-        .card {
-          width: 90vw;
-          height: 25vh;
-          margin: 20px 0px;
-        }
+      .heading {
+        order: -1;
       }
     }
   }
