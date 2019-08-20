@@ -70,18 +70,19 @@ const loadIndexTemplate = () => {
   fetchAllRequiredData().then(data => {
     const githubData = data.github;
     const localData = data.local;
-    const company = githubData.company.split('-');
 
     renderTemplate('index', {
       name: githubData.name,
-      company: {
-        name: company[0].trim(),
-        url: company[1].trim()
-      },
       avatarUrl: githubData.avatar_url,
-      aboutMe: githubData.bio,
+      company: {
+        name: localData.experience[0].name,
+        designation: localData.experience[0].designation,
+        url: localData.experience[0].url
+      },
+      bio: githubData.bio,
       education: localData.education,
-      experience: localData.experience
+      experience: localData.experience,
+      aboutMe: localData.aboutMe
     });
   });
 };

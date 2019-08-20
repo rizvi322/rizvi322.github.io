@@ -26,10 +26,16 @@
       }
       .sub-heading {
         font-size: 30px;
+        color: $color_semibright;
+
+        span {
+          color: $color_dark;
+          font-size: 22px;
+        }
 
         a {
-          text-decoration: none;
-          color: $color_semibright;
+          color: inherit;
+          font-weight: bolder;
         }
       }
 

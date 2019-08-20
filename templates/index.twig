@@ -1,19 +1,16 @@
-{% include "fragments/site-menu.twig" %}
+<section class="menu">
+  {% include "fragments/site-menu.twig" %}
+</section>
 
-<div class="top">
+<section class="top">
    {% include "fragments/home.twig" %}
-</div>
+</section>
 
-<div class="main">
+<section class="main">
   {% include "fragments/experience.twig" with { "experience": experience } only %}
   {% include "fragments/education.twig" with { "education": education } only %}
-</div>
+</section>
 
-<div id="contact" class="footer">
-  <p>@Copyright
-    <strong>S M Raihan Azim</strong>
-  </p>
-  <p>Email:
-    <a href="@mailto:raihan.cseju@gmail.com">raihan.cseju@gmail.com</a>
-  </p>
-</div>
+<section id="about" class="footer">
+  {% include "fragments/about.twig" %}
+</section>

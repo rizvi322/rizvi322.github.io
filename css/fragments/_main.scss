@@ -18,7 +18,7 @@
     .companies {
       .company {
         height: 100vh;
-        padding: 20px;
+        padding: 60px 40px;
         overflow-y: auto;
 
         display: flex;
@@ -27,6 +27,10 @@
         align-items: flex-start;
 
         color: white;
+
+        h1 {
+          font-size: 25px;
+        }
 
         .responsibility {
           margin-top: 50px;
@@ -48,15 +52,15 @@
 
       .company:nth-child(odd) {
         background: radial-gradient(
-          lighten($color_dark, 10%),
-          darken($color_dark, 10%)
+          lighten($color_semidark, 10%),
+          darken($color_semidark, 10%)
         );
       }
 
       .company:nth-child(even) {
         background: radial-gradient(
-          lighten($color_semibright, 10%),
-          darken($color_semibright, 10%)
+          lighten($color_dark, 10%),
+          darken($color_dark, 10%)
         );
       }
     }
@@ -80,8 +84,8 @@
       align-items: center;
 
       background: radial-gradient(
-        lighten($color_semidark, 10%),
-        darken($color_semidark, 10%)
+        lighten($color_semibright, 10%),
+        darken($color_semibright, 10%)
       );
       color: white;
 

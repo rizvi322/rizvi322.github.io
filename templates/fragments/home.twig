@@ -2,9 +2,10 @@
     <div class="headings">
       <h1 class="main-heading">{{ name }}</h1>
       <h2 class="sub-heading">
+        {{ company.designation }} <span>at</span>
         <a href="{{ company.url }}" target="_blank" title="{{ company.name }}">{{ company.name }}</a>
       </h2>
-      <p class="bio">{{ aboutMe }}</p>
+      <p class="bio">{{ bio }}</p>
     </div>
 
     <div class="cover">

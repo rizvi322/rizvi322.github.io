@@ -25,13 +25,21 @@
       "name": "Escenic Asia Ltd.",
       "since": "2013-current",
       "designation": "Software Engineer",
-      "expFile": "escenic.md"
+      "expFile": "escenic.md",
+      "url": "http://www.escenic.com"
     },
     {
       "name": "DNS Engineering Ltd.",
       "since": "2011-2012",
       "designation": "Software Engineer (Trainee)",
-      "responsibility": "Involved in analyzing, designing and developing a web-based backend Management system with database management for Administrator, Human Resources, Finance and Accounting departments of DNSE."
+      "responsibility": "Involved in analyzing, designing and developing a web-based backend Management system with database management for Administrator, Human Resources, Finance and Accounting departments of DNSE.",
+      "url": "http://www.dnse.com.bd"
     }
-  ]
+  ],
+  "aboutMe": {
+    "dob": "January 28, 1990",
+    "email": "raihan.cseju@gmail.com",
+    "github": "http://github.com/rizvi322",
+    "linkedin": "https://www.linkedin.com/in/s-m-raihan-azim-81090369"
+  }
 }
