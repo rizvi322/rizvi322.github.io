@@ -65,12 +65,12 @@
 
 @media screen and (min-width: 1025px) {
     .headings {
-      animation: ease-from-left 2s ease-out;
+      animation: ease-from-left 1s ease-out;
     }
 
     .avatar-image {
       opacity: 0;
-      animation: ease-from-right 1s ease-out 2s forwards;
+      animation: ease-from-right 1s ease-out 0.5s forwards;
     }
   }
 

@@ -269,13 +269,13 @@ body {
 
 @media screen and (min-width: 1025px) {
   .headings {
-    -webkit-animation: ease-from-left 2s ease-out;
-            animation: ease-from-left 2s ease-out;
+    -webkit-animation: ease-from-left 1s ease-out;
+            animation: ease-from-left 1s ease-out;
   }
   .avatar-image {
     opacity: 0;
-    -webkit-animation: ease-from-right 1s ease-out 2s forwards;
-            animation: ease-from-right 1s ease-out 2s forwards;
+    -webkit-animation: ease-from-right 1s ease-out 0.5s forwards;
+            animation: ease-from-right 1s ease-out 0.5s forwards;
   }
 }
 
@@ -429,13 +429,18 @@ body {
 
 .site-menu .menu-item .menu-item-link:hover {
   border: solid 1px #023059;
+  font-weight: bolder;
+}
+
+.site-menu .menu-item .menu-item-link.active {
+  font-weight: bolder;
 }
 
 @media screen and (min-width: 1025px) {
   .site-menu {
     opacity: 0;
-    -webkit-animation: ease-from-top 1s ease-in 3s forwards;
-            animation: ease-from-top 1s ease-in 3s forwards;
+    -webkit-animation: ease-from-top 0.5s ease-in 1s forwards;
+            animation: ease-from-top 0.5s ease-in 1s forwards;
   }
 }
 
@@ -851,9 +856,16 @@ body {
 
 .footer p {
   font-size: 22px;
+  padding: 5px;
 }
 
 .footer p a {
-  color: #f56469;
+  color: #034b8b;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    padding-left: 20px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

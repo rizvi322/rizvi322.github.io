@@ -24,9 +24,16 @@
 
   p {
     font-size: 22px;
+    padding: 5px;
 
     a {
-      color: $color_semibright;
+      color: lighten($color_dark, 10%);
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    padding-left: 20px;
   }
 }

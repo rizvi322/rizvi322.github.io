@@ -1,3 +1,4 @@
+// Markdown experience details codes
 const mdConverter = new showdown.Converter();
 
 const loadMarkdownFileContent = async (fileName, container) => {
@@ -23,8 +24,7 @@ companies.forEach(company => {
     responsibilityContainer.innerHTML += data.responsibility;
   }
 });
-// Ends Markdown experience details
-
+// Ends Markdown experience details codes
 
 // Scroll Magic codes
 const controller = new ScrollMagic.Controller();
@@ -40,7 +40,6 @@ new ScrollMagic.Scene({
 // Ends Scroll Magic codes
 
 // Intersection objservver codes
-
 const intersectionOptions = {
   root: null,
   rootMargin: '0px',
@@ -66,5 +65,28 @@ const observer = new IntersectionObserver(
 document
   .querySelectorAll('.track')
   .forEach(element => observer.observe(element));
-
 // Ends Intersection objservver codes
+
+// Menu item item active link codes
+const siteMenu = document.querySelector('.site-menu');
+if(siteMenu) {
+  const menuItemLinks = document.querySelectorAll('.menu-item-link');
+
+  menuItemLinks.forEach(menuItemLink => {
+    menuItemLink.addEventListener('click', (event) => {
+      const currentMenuItem = event.target;
+
+      if(!currentMenuItem.classList.contains('active')) {
+        removeActiveClassFromAllMenuItemLink(menuItemLinks);
+        currentMenuItem.classList.add('active');
+      }
+    })
+  })
+}
+
+const removeActiveClassFromAllMenuItemLink = (menuItemLinks) => {
+  menuItemLinks.forEach(menuItemLink => {
+    menuItemLink.classList.remove('active');
+  });
+}
+// Ends menu item item active link codes

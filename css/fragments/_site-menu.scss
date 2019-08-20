@@ -24,6 +24,11 @@
 
       &:hover {
         border: solid 1px $color_dark;
+        font-weight: bolder;
+      }
+
+      &.active {
+        font-weight: bolder;
       }
     }
   }
@@ -32,7 +37,7 @@
 @media screen and (min-width: 1025px) {
   .site-menu {
     opacity: 0;
-    animation: ease-from-top 1s ease-in 3s forwards;
+    animation: ease-from-top 0.5s ease-in 1s forwards;
   }
 }
 
