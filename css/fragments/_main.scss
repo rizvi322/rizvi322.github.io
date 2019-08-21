@@ -26,7 +26,7 @@
         justify-content: flex-start;
         align-items: flex-start;
 
-        color: white;
+        // color: white;
 
         h1 {
           font-size: 25px;
@@ -48,20 +48,22 @@
             text-decoration: none;
           }
         }
+
+        background-size: 400%;
+        animation: bg-animation 5s infinite alternate;
       }
 
       .company:nth-child(odd) {
-        background: radial-gradient(
-          lighten($color_semidark, 10%),
-          darken($color_semidark, 10%)
+        background: linear-gradient(
+          45deg,
+          $bg_color_1,
+          $bg_color_2,
+          $bg_color_3
         );
       }
 
       .company:nth-child(even) {
-        background: radial-gradient(
-          lighten($color_dark, 10%),
-          darken($color_dark, 10%)
-        );
+        background: linear-gradient(135deg, $bg_color_3, $bg_color_4, $bg_color_5);
       }
     }
   }
@@ -84,8 +86,9 @@
       align-items: center;
 
       background: radial-gradient(
-        lighten($color_semibright, 10%),
-        darken($color_semibright, 10%)
+        $color_medium,
+        $color_semidark,
+        $color_dark
       );
       color: white;
 

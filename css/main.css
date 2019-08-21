@@ -197,6 +197,24 @@ body {
   }
 }
 
+@-webkit-keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
 .top {
   background: url("../assets/header-background.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -400,6 +418,15 @@ body {
   }
 }
 
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
 .site-menu {
   position: fixed;
   top: 0;
@@ -540,6 +567,15 @@ body {
   }
 }
 
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
 .main {
   width: 100%;
   overflow: hidden;
@@ -608,7 +644,9 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  color: white;
+  background-size: 400%;
+  -webkit-animation: bg-animation 5s infinite alternate;
+          animation: bg-animation 5s infinite alternate;
 }
 
 .main .experience .companies .company h1 {
@@ -634,11 +672,11 @@ body {
 }
 
 .main .experience .companies .company:nth-child(odd) {
-  background: radial-gradient(#0487a4, #023540);
+  background: linear-gradient(45deg, #6FD3D8, #C5F779, #F8DC31);
 }
 
 .main .experience .companies .company:nth-child(even) {
-  background: radial-gradient(#034b8b, #011527);
+  background: linear-gradient(135deg, #F8DC31, #EB783A, #E33D77);
 }
 
 .main .education {
@@ -701,7 +739,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: radial-gradient(#f89497, #f2343b);
+  background: radial-gradient(#36a59a, #035e72, #023059);
   color: white;
 }
 
@@ -828,11 +866,23 @@ body {
   }
 }
 
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
 .footer {
   width: 100%;
   height: 100vh;
   bottom: 0;
-  background: radial-gradient(#f9c6b6, #d23f11);
+  background: linear-gradient(45deg, #6FD3D8, #C5F779, #F8DC31, #EB783A, #E33D77);
+  background-size: 400%;
+  -webkit-animation: bg-animation 5s infinite alternate;
+          animation: bg-animation 5s infinite alternate;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

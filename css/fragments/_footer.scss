@@ -6,10 +6,9 @@
   height: 100vh;
   bottom: 0;
 
-  background: radial-gradient(
-    lighten($color_bright, 10%),
-    darken($color_bright, 30%)
-  );
+  background: linear-gradient(45deg, $bg_color_1, $bg_color_2, $bg_color_3, $bg_color_4, $bg_color_5);
+  background-size: 400%;
+  animation: bg-animation 5s infinite alternate;
 
   display: flex;
   flex-direction: column;
