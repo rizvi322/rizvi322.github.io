@@ -6,8 +6,8 @@ const loadMarkdownFileContent = async (fileName, container) => {
     async result => await result.text()
   );
 
-  if(markdownText) {
-    container.innerHTML =  mdConverter.makeHtml(markdownText);
+  if (markdownText) {
+    container.innerHTML = mdConverter.makeHtml(markdownText);
   }
 };
 
@@ -17,10 +17,9 @@ companies.forEach(company => {
   const data = JSON.parse(company.dataset['company']);
   const responsibilityContainer = company.querySelector('.responsibility');
 
-  if(data.expFile) {
+  if (data.expFile) {
     loadMarkdownFileContent(data.expFile, responsibilityContainer);
-  }
-  else if(data.responsibility) {
+  } else if (data.responsibility) {
     responsibilityContainer.innerHTML += data.responsibility;
   }
 });
@@ -34,8 +33,8 @@ new ScrollMagic.Scene({
   triggerElement: '.experience-heading',
   triggerHook: 0
 })
-.setPin('.experience-heading')
-.addTo(controller);
+  .setPin('.experience-heading')
+  .addTo(controller);
 
 // Ends Scroll Magic codes
 
@@ -67,26 +66,51 @@ document
   .forEach(element => observer.observe(element));
 // Ends Intersection objservver codes
 
-// Menu item item active link codes
+// Site menu codes
 const siteMenu = document.querySelector('.site-menu');
-if(siteMenu) {
+const hamberger = document.querySelector('.hamburger');
+const hambergerLink = document.querySelector('.hamburger-link');
+
+if (siteMenu && hambergerLink) {
+  hambergerLink.addEventListener('click', () => {
+    if (siteMenu.classList.contains('hide')) {
+      showSiteMenu();
+    } else {
+      hideSiteMenu();
+    }
+  });
+
   const menuItemLinks = document.querySelectorAll('.menu-item-link');
 
   menuItemLinks.forEach(menuItemLink => {
-    menuItemLink.addEventListener('click', (event) => {
+    menuItemLink.addEventListener('click', event => {
       const currentMenuItem = event.target;
 
-      if(!currentMenuItem.classList.contains('active')) {
+      if (!currentMenuItem.classList.contains('active')) {
         removeActiveClassFromAllMenuItemLink(menuItemLinks);
         currentMenuItem.classList.add('active');
       }
-    })
-  })
+
+      hideSiteMenu();
+    });
+  });
 }
 
-const removeActiveClassFromAllMenuItemLink = (menuItemLinks) => {
+const removeActiveClassFromAllMenuItemLink = menuItemLinks => {
   menuItemLinks.forEach(menuItemLink => {
     menuItemLink.classList.remove('active');
   });
-}
-// Ends menu item item active link codes
+};
+
+const showSiteMenu = () => {
+  siteMenu.classList.remove('hide');
+  siteMenu.classList.add('show');
+  hamberger.classList.remove('closed');
+};
+
+const hideSiteMenu = () => {
+  siteMenu.classList.remove('show');
+  siteMenu.classList.add('hide');
+  hamberger.classList.add('closed');
+};
+// Ends site menu codes
