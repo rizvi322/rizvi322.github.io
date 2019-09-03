@@ -22,15 +22,15 @@
       flex: 2;
 
       .main-heading {
-        font-size: 64px;
+        font-size: 4rem;
       }
       .sub-heading {
-        font-size: 30px;
+        font-size: 2rem;
         color: $color_semibright;
 
         span {
           color: $color_dark;
-          font-size: 22px;
+          font-size: 1.35rem;
         }
 
         a {
@@ -41,7 +41,7 @@
 
       .bio {
         font-family: $font_sans;
-        font-size: 20px;
+        font-size: 1.25rem;
         color: $color_semidark;
         text-align: justify;
 
@@ -86,15 +86,15 @@
         text-align: left;
 
         .main-heading {
-          font-size: 45px;
+          font-size: 3rem;
         }
 
         .sub-heading {
-          font-size: 25px;
+          font-size: 1.5rem;
         }
 
         .bio {
-          font-size: 18px;
+          font-size: 1.25rem;
         }
       }
 

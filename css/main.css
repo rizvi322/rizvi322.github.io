@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: "Alegreya", serif;
   color: #023059;
@@ -244,17 +248,17 @@ body {
 }
 
 .top .header .headings .main-heading {
-  font-size: 64px;
+  font-size: 4rem;
 }
 
 .top .header .headings .sub-heading {
-  font-size: 30px;
+  font-size: 2rem;
   color: #f56469;
 }
 
 .top .header .headings .sub-heading span {
   color: #023059;
-  font-size: 22px;
+  font-size: 1.35rem;
 }
 
 .top .header .headings .sub-heading a {
@@ -264,7 +268,7 @@ body {
 
 .top .header .headings .bio {
   font-family: "Roboto", sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #035e72;
   text-align: justify;
   margin-top: 5vh;
@@ -312,13 +316,13 @@ body {
     text-align: left;
   }
   .top .header .headings .main-heading {
-    font-size: 45px;
+    font-size: 3rem;
   }
   .top .header .headings .sub-heading {
-    font-size: 25px;
+    font-size: 1.5rem;
   }
   .top .header .headings .bio {
-    font-size: 18px;
+    font-size: 1.25rem;
   }
   .top .header .cover {
     padding-top: 10vh;
@@ -478,7 +482,7 @@ body {
 .site-menu .menu-item .menu-item-link {
   text-decoration: none;
   color: #035e72;
-  font-size: 30px;
+  font-size: 2rem;
   padding: 10px 20px;
 }
 
@@ -674,10 +678,11 @@ body {
 }
 
 .main .experience .companies .company h1 {
-  font-size: 25px;
+  font-size: 2rem;
 }
 
 .main .experience .companies .company .responsibility {
+  font-size: 1.25rem;
   margin-top: 50px;
 }
 
@@ -773,12 +778,16 @@ body {
 }
 
 .main .education .degrees .degree h1 {
-  font-size: 25px;
+  font-size: 2rem;
 }
 
 .main .education .degrees .degree h2 {
-  font-size: 20px;
+  font-size: 1.5rem;
   padding: 20px 0px;
+}
+
+.main .education .degrees .degree p {
+  font-size: 1rem;
 }
 
 .main .education .degrees .line {
@@ -923,13 +932,13 @@ body {
 }
 
 .footer h1 {
-  font-size: 64px;
+  font-size: 4rem;
   margin-bottom: 40px;
   text-decoration: underline;
 }
 
 .footer p {
-  font-size: 22px;
+  font-size: 1.5rem;
   padding: 5px;
 }
 
