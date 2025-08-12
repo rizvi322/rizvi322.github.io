@@ -54,7 +54,7 @@
   fetchAllRequiredData = async () => {
     const data = {};
 
-    await fetch('../assets/data.json')
+    await fetch('assets/data.json')
       .then(async result => await result.json())
       .then(json => {
         data['local'] = json;
@@ -80,7 +80,7 @@
           designation: localData.experience[0].designation,
           url: localData.experience[0].url
         },
-        bio: githubData.bio,
+        bio: localData.aboutMe.bio,
         education: localData.education,
         experience: localData.experience,
         aboutMe: localData.aboutMe

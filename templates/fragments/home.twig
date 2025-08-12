@@ -1,14 +1,19 @@
 <section id="home" class="header">
-    <div class="headings">
-      <h1 class="main-heading">{{ name }}</h1>
-      <h2 class="sub-heading">
-        {{ company.designation }} <span>at</span>
-        <a href="{{ company.url }}" target="_blank" title="{{ company.name }}">{{ company.name }}</a>
-      </h2>
-      <p class="bio">{{ bio }}</p>
+    <div class="top-section">
+      <div class="cover">
+        <img class="avatar-image" src="{{ avatarUrl }}" alt="avatar url"/>
+      </div>
+
+      <div class="headings">
+        <h1 class="main-heading">{{ name }}</h1>
+        <h2 class="sub-heading">{{ company.designation }}</h2>
+        <h3 class="company-heading">
+          <a href="{{ company.url }}" target="_blank" title="{{ company.name }}">{{ company.name }}</a>
+        </h3>
+      </div>
     </div>
 
-    <div class="cover">
-      <img class="avatar-image" src="{{ avatarUrl }}" alt="avatar url"/>
+    <div class="bio-section">
+      <p class="bio">{{ bio }}</p>
     </div>
   </section>

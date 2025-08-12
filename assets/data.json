@@ -3,13 +3,13 @@
     {
       "name": "M.Sc",
       "subject": "Computer Science and Engineering (CSE)",
-      "institute": "Jahangirnagar Universiry",
+      "institute": "Jahangirnagar University",
       "session": "2012-2013"
     },
     {
       "name": "B.Sc",
       "subject": "Computer Science and Engineering (CSE)",
-      "institute": "Jahangirnagar Universiry"
+      "institute": "Jahangirnagar University"
     },
     {
       "name": "H.S.C",
@@ -22,11 +22,18 @@
   ],
   "experience": [
     {
-      "name": "Escenic Asia Ltd.",
-      "since": "2013-current",
-      "designation": "Software Engineer",
+      "name": "Cefalo Bangladesh Limited",
+      "since": "May, 2025 - Current",
+      "designation": "Staff Software Engineer",
+      "responsibility": "Currently, working as part of team 'Konstel'. I am primarily working on Angular 19+ and NestJS.",
+      "url": "https://www.cefalo.com/"
+    },
+    {
+      "name": "StiboDX Limited (former Escenic Asia Limited)",
+      "since": "July, 2013 - April, 2025",
+      "designation": "Senior Software Engineer",
       "expFile": "escenic.md",
-      "url": "http://www.escenic.com"
+      "url": "http://www.stibodx.com"
     },
     {
       "name": "DNS Engineering Ltd.",
@@ -37,6 +44,7 @@
     }
   ],
   "aboutMe": {
+    "bio": "Versatile Staff Software Engineer combining technical excellence with product leadership experience. Currently driving innovation with Angular 19+ and NestJS at Cefalo Bangladesh Limited. Former Product Owner at StiboDX Limited, where I successfully bridged the gap between business requirements and technical implementation while leading development teams. 12+ years of hands-on experience in full-stack development, system architecture, and agile product management. M.Sc. in Computer Science & Engineering.",
     "dob": "January 28, 1990",
     "email": "raihan.cseju@gmail.com",
     "github": "http://github.com/rizvi322",

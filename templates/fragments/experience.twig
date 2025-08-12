@@ -6,7 +6,7 @@
   </div>
   <div class="companies">
     {% for company in experience %}
-      <div class="company" data-company='{{ company | json_encode }}'>
+      <div class="company" data-company="{{ company | json_encode | e('html_attr') }}">
         <h1>{{ company.name }}</h1>
         <p>{{ company.designation }}</p>
         <p>{{ company.since }}</p>

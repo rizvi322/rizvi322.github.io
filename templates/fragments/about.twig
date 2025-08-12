@@ -1,8 +1,10 @@
-<div>
-  <h1>About Me</h1>
-  <p><strong>Full name:</strong> {{ name }}</p>
-  <p><strong>Date of birth:</strong> {{ aboutMe.dob }}</p>
-  <p><strong>Github:</strong> <a href="{{ aboutMe.github }}" title="github url">{{ aboutMe.github }}</a></p>
-  <p><strong>Resume:</strong> <a href="{{ aboutMe.linkedin }}" title="linkedin url">{{ aboutMe.linkedin }}</a></p>
-  <p><strong>Email:</strong> <a href="@mailto:{{ aboutMe.email }}">{{ aboutMe.email }}</a></p>
+<div class="about-wrapper">
+  <div class="about-content">
+    <h1>About Me</h1>
+    <p><strong>Full name:</strong> {{ name }}</p>
+    <p><strong>Date of birth:</strong> {{ aboutMe.dob }}</p>
+    <p><strong>Github:</strong> <a href="{{ aboutMe.github }}" title="github url">{{ aboutMe.github }}</a></p>
+    <p><strong>Resume:</strong> <a href="{{ aboutMe.linkedin }}" title="linkedin url">{{ aboutMe.linkedin }}</a></p>
+    <p><strong>Email:</strong> <a href="@mailto:{{ aboutMe.email }}">{{ aboutMe.email }}</a></p>
+  </div>
 </div>
