@@ -754,6 +754,8 @@ body:not([data-theme="dark"]) .theme-toggle-button .moon-emoji {
 
 .site-menu {
   position: fixed;
+  right: 0;
+  top: 0;
   width: 25vw;
   height: 100vh;
   z-index: 10;
